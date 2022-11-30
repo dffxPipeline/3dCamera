@@ -174,8 +174,8 @@ function sendImage(code) {
             fileName: fileName
         });
     });
-    
-    var fileName = guid() + "_" + cameraName + '.jpg';
+    var ext = "jpg"
+    var fileName = `cameraName.${ext}`;
     
     // Post the image data via an http request
     var form = new FormData();
