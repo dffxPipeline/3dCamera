@@ -221,7 +221,7 @@ function takeImage() {
 // To update the software we run git pull and npm install and then forcibily kill this process
 // Supervisor will then restart it
 function updateSoftware() {
-    childProcess = exec('cd ' + __dirname + ';sudo git remote set-url origin git@github.com:dffxPipeline/3dCamera.git', function (error, stdout, stderr) {
+    childProcess = exec('cd ' + __dirname + ';sudo git remote set-url origin https://github.com/dffxPipeline/3dCamera.git', function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
         if (error !== null) {
