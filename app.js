@@ -175,7 +175,7 @@ function sendImage(code) {
         });
     });
     var ext = "jpg"
-    var fileName = `cameraName.${ext}`;
+    var fileName = `${cameraName}.${ext}`;
     
     // Post the image data via an http request
     var form = new FormData();
@@ -222,6 +222,8 @@ function takeImage() {
 // To update the software we run git pull and npm install and then forcibily kill this process
 // Supervisor will then restart it
 function updateSoftware() {
+    console.log(`Updating software IP: ${ipAddress} DeviceName: ${cameraName}`);
+
     childProcess = exec('cd ' + __dirname + ';sudo git remote set-url origin https://github.com/dffxPipeline/3dCamera.git', function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
