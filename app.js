@@ -207,6 +207,8 @@ function takeImage() {
         '-t', 250,  // how long should taking the picture take?
         '-q', 100,     // quality
         '-ISO', 100, //ISO
+        '-vf',
+        '-hf',
         //'-awb', 'fluorescent', 
         '-o', getAbsoluteImagePath()   // path + name
     ];
