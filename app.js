@@ -79,7 +79,7 @@ socket.on('connect', function(){
 });
 
 socket.on('take-photo', function(data){
-    console.log("Taking a photo");
+    console.log(`Taking Photo IP: ${data.ipAddress} DeviceName: ${cameraName}`);
     
     photoStartTime  = Date.now();
     lastReceiveTime = data.time
@@ -89,7 +89,7 @@ socket.on('take-photo', function(data){
 });
 
 socket.on('update-software', function(data){
-    console.log("Updating software");
+    console.log(`Updating software IP: ${data.ipAddress} DeviceName: ${cameraName}`);
     
     updateInProgress = true;
 
@@ -145,8 +145,7 @@ function lookupIp() {
 }
 
 function sendImage(code) {
-    
-    //console.log("Photo capture complete, status code:" + code);
+    console.log(`Photo capture complete: status code: ${code} IP: ${ipAddress} DeviceName: ${cameraName}`);
     
     // A success should come back with exit code 0
     if (code !== 0) {
