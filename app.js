@@ -209,6 +209,7 @@ function takeImage() {
         '-ISO', 100, //ISO
         '-vf',
         '-hf',
+        '--exif', 'EXIF.FocalLength=6/1',
         //'-awb', 'fluorescent', 
         '-o', getAbsoluteImagePath()   // path + name
     ];
